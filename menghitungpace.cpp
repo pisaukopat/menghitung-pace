@@ -9,23 +9,36 @@ struct DataLari {
     double totalWaktuMenit;
     double totalWaktuDetik;
     double totalJarak;
-
     // Fungsi untuk menghitung pace
 double hitungPace(double totalWaktuMenit, double totalWaktuDetik, double totalJarak) {
     double totalWaktu = totalWaktuMenit + (totalWaktuDetik / 60.0);
     return totalWaktu / totalJarak;
 }
-
 // Fungsi untuk menghitung kecepatan (speed) dalam satuan detik
 double hitungKecepatanDetik(double totalWaktuMenit, double totalWaktuDetik, double totalJarak) {
     double totalWaktuDetikTotal = (totalWaktuMenit * 60) + totalWaktuDetik;
     return totalJarak / totalWaktuDetikTotal; // dalam detik per kilometer
 }
+// Fungsi untuk menentukan intensitas berdasarkan kecepatan
+string tentukanIntensitas(double kecepatanDetik) {
+    double kecepatanMph = kecepatanDetik * 0.0372823; 
+    double paceMenit = 3600 / (kecepatanDetik * 60); 
+
+    if (kecepatanMph < 3) {
+        return "Intensitas Ringan: Pace lebih dari 20 menit per mil";
+    } else if (kecepatanMph >= 3 && kecepatanMph < 4) {
+        return "Intensitas Sedang: Pace antara 16 dan 20 menit per mil";
+    } else if (kecepatanMph >= 4 && kecepatanMph < 5) {
+        return "Intensitas Menengah: Pace antara 12 dan 15 menit per mil";
+    } else {
+        return "Intensitas Tinggi: Pace kurang dari 12 menit per mil";
+    }
+}
+
 }
 
 
 int main() {
-
     int pilihan;
     do {
         cout << "=== Program Penghitung Pace Lari ===" << endl;
