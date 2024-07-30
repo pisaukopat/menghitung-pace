@@ -3,8 +3,16 @@
 #include <string>
 using namespace std;
 
-int main() {
+// Definisi struct untuk menyimpan data lari
+struct DataLari {
+    string nama;
+    string jenisKelamin;
+    double totalWaktuMenit;
+    double totalWaktuDetik;
+    double totalJarak;
 
+
+int main() {
 
     int pilihan;
     do {
@@ -13,17 +21,15 @@ int main() {
         cout << "2. Tampilkan hasil perhitungan" << endl;
         cout << "3. Keluar" << endl;
         cout << "Masukkan pilihan Anda: ";
-        return 0;
         cin >> pilihan;
-
         switch (pilihan) {
             case 1: {
-
+                
                 cout << "" << endl;
                 break;
             }
             case 2: {
-
+                
                 cout << "" << endl;
                 break;
             }
@@ -34,6 +40,5 @@ int main() {
                 cout << "Pilihan tidak valid. Silakan coba lagi." << endl;
         }
     } while (pilihan != 3);
-
     return 0;
 }
