@@ -4,9 +4,9 @@
 using namespace std;
 
 int main() {
-    cout << "Hello, World!" << endl;
 
 
+    int pilihan;
     do {
         cout << "=== Program Penghitung Pace Lari ===" << endl;
         cout << "1. Input data lari" << endl;
@@ -14,4 +14,26 @@ int main() {
         cout << "3. Keluar" << endl;
         cout << "Masukkan pilihan Anda: ";
         return 0;
+        cin >> pilihan;
+
+        switch (pilihan) {
+            case 1: {
+
+                cout << "" << endl;
+                break;
+            }
+            case 2: {
+
+                cout << "" << endl;
+                break;
+            }
+            case 3:
+                cout << "aplikasi keluar" << endl;
+                break;
+            default:
+                cout << "Pilihan tidak valid. Silakan coba lagi." << endl;
+        }
+    } while (pilihan != 3);
+
+    return 0;
 }
